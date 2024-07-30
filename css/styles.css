@@ -32,6 +32,7 @@ img {
   max-width: 100%;
 }
 
+/* Utils */
 .container {
   max-width: 1200px;
   margin: 0 auto;
@@ -44,9 +45,25 @@ img {
   padding: 0 2rem;
 }
 
+.btn {
+  display: inline-block;
+  padding: 1.3rem 2.3rem;
+  border: 1px solid var(--secondary-color);
+  border-radius: 32px;
+  background-color: var(--secondary-color);
+  color: var(--dark-color);
+  transition: all 0.2s;
+}
+
+.btn:hover {
+  background-color: var(--primary-color);
+  color: var(--light-color);
+  border-color: var(--light-color);
+}
+
 /* Navbar */
 .navbar {
-  background: black; /* TODO */
+  background: transparent;
   color: white;
   padding: 1rem 2rem;
   position: fixed;
@@ -55,6 +72,11 @@ img {
   left: 0;
   z-index: 1000;
   transition: background-color 0.3s ease-in-out;
+}
+
+.navbar.navbar-scroll {
+  background: rgba(235, 77, 85, 0.7);
+  backdrop-filter: blur(10px);
 }
 
 .navbar-flex {
@@ -123,11 +145,73 @@ img {
   font-size: 1.2rem;
 }
 
+/* Hero */
+.hero {
+  background: #000 url("../img/header-background.jpg") center center/cover
+    no-repeat;
+  padding: 11.5rem 2rem 8rem;
+  color: #fff;
+  overflow-x: hidden;
+  position: relative;
+}
+
+.hero-flex {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 6rem;
+  padding-bottom: 8rem;
+}
+
+.hero h1 {
+  font-size: 3.5rem;
+  line-height: 1.2;
+  font-weight: 700;
+  margin-bottom: 1rem;
+}
+
+.hero p {
+  font-size: 1.2rem;
+  margin-bottom: 2rem;
+  line-height: 1.8;
+  font-weight: 400;
+}
+
+.hero img {
+  width: 100%;
+  margin-right: -100px;
+}
+
 /* Media Queries */
 @media (max-width: 1200px) {
+  .hero-flex {
+    gap: 2rem;
+  }
+
+  .hero img {
+    max-width: 500px;
+    margin-right: 0;
+  }
+
+  .hero h1 {
+    font-size: 3rem;
+  }
 }
 
 @media (max-width: 992px) {
+  .hero {
+    text-align: center;
+  }
+
+  .hero-flex {
+    flex-direction: column;
+    padding-bottom: 4rem;
+  }
+
+  .hero img {
+    max-width: 600px;
+    margin-top: 2rem;
+  }
 }
 
 @media (max-width: 768px) {
@@ -146,4 +230,16 @@ img {
 }
 
 @media (max-width: 576px) {
+  .hero {
+    padding-right: 0.2rem;
+    padding-left: 0.2rem;
+  }
+
+  .hero h1 {
+    font-size: 2.5rem;
+  }
+
+  .hero img {
+    max-width: 350px;
+  }
 }
