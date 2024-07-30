@@ -61,6 +61,15 @@ img {
   border-color: var(--light-color);
 }
 
+/* Text Classes */
+.text-primary {
+  color: var(--primary-color);
+}
+
+.text-secondary {
+  color: var(--secondary-color);
+}
+
 .section {
   margin: 2rem 0 0;
 }
@@ -150,6 +159,13 @@ img {
 
 .navbar i {
   font-size: 1.5rem;
+}
+
+.chapters,
+.summary,
+.info,
+.takeaways {
+  padding: 4rem 2rem 5rem;
 }
 
 /* Mobile menu */
@@ -246,11 +262,7 @@ img {
   margin: 0.5rem 0;
 }
 
-/* Chapters */
-.chapters {
-  padding: 4rem 2rem 5rem;
-}
-
+/* Chapter cards */
 .chapter-cards {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
@@ -273,7 +285,6 @@ img {
 .summary {
   background-color: var(--light-color);
   color: var(--dark-color);
-  padding: 4rem 2rem 5rem;
 }
 
 .summary .section-lists {
@@ -297,6 +308,62 @@ img {
 
 .summary .list-item:last-child {
   border-bottom: none;
+}
+
+/* Info Section */
+.info {
+  padding-left: 0;
+  padding-right: 0;
+}
+.info-container {
+  background: url("../img/audience.jpg") top center/cover no-repeat;
+  display: flex;
+}
+
+.info-left {
+  width: 50%;
+}
+
+.info-content {
+  background-color: var(--primary-color);
+  color: #fff;
+  flex: 1;
+  padding: 4rem;
+}
+
+.info-content h2 {
+  font-size: 2rem;
+  margin-bottom: 1rem;
+  font-weight: 700;
+}
+
+.info-content p {
+  font-size: 1.2rem;
+  margin-bottom: 2rem;
+}
+
+.info-content ul li {
+  font-size: 1.2rem;
+  line-height: 2;
+}
+
+.info-content ul li i {
+  margin-right: 0.5rem;
+  color: var(--secondary-color);
+}
+
+/* Takeaways */
+.takeaways-cards {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 2rem;
+  padding: 1.5rem 0;
+}
+
+.takeaways-cards .card {
+  flex-direction: row;
+  text-align: left;
+  gap: 1rem;
 }
 
 /* Media Queries */
@@ -341,6 +408,14 @@ img {
   .chapter-cards {
     grid-template-columns: 1fr;
   }
+
+  .takeaways-cards {
+    grid-template-columns: 1fr;
+  }
+
+  .takeaways-cards .card {
+    justify-content: flex-start;
+  }
 }
 
 @media (max-width: 768px) {
@@ -355,6 +430,26 @@ img {
   .navbar .mobile-menu-toggle {
     display: block;
     padding: 10px;
+  }
+
+  .info-container {
+    flex-direction: column;
+  }
+
+  .info-content {
+    padding: 2rem;
+  }
+
+  .info-content h2 {
+    font-size: 1.5rem;
+  }
+
+  .info-content p {
+    font-size: 1rem;
+  }
+
+  .info-left {
+    display: none;
   }
 }
 
